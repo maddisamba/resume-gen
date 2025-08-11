@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>AI Resume Generator</h1>
+  <form  (ngSubmit)="onSubmit()" [formGroup]="resumeForm">
+    <label for="resume">Upload Resume(PDF Only):</label>
+    <input 
+      type="file"
+      id="resume"
+      (change)="onFIleUpload($event)"
+      accept="application/pdf"
+      required
+    />
+    <label for="jobLink">Provide Job Link:</label>
+    <input 
+      type="text"
+      id="jobLink"
+      formControlName="jobLink"
+      required
+    />
+    <button type="submit" (click)="onSubmit()" >Generate Resume</button>
+  </form>
+</div>
